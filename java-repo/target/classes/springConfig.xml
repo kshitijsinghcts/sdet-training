@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="student1" class="spring.entities.Student">
+        <constructor-arg index="0" value="21" />
+    </bean>
+
+    <!-- this object is being made to be passed to the next -->
+    <bean id="sdetRef" class="spring.entities.CohertSDET" />
+
+    <bean id="trainingService" class="spring.entities.TrainingService">
+        <property name="cohert" ref="sdetRef" />
+    </bean>
+
+</beans>
