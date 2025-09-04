@@ -8,6 +8,12 @@ public class TrainingService {
 
     private Cohert cohert;
 
+    // will not need autowire if constructor injection is used
+    // private final Cohert cohert;
+    // public TrainingService(Cohert cohert) {
+    // this.cohert = cohert;
+    // }
+
     @Autowired
     public void setCohert(Cohert cohert) {
         this.cohert = cohert;
