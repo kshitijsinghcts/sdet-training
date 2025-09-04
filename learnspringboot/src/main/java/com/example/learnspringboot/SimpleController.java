@@ -9,4 +9,9 @@ public class SimpleController {
     public String home() {
         return "Hello World! This is a simple Spring Boot application.";
     }
+
+    @GetMapping("/about")
+    private String about() {
+        return "This application demonstrates a simple REST controller in Spring Boot.";
+    }
 }
