@@ -4,7 +4,7 @@ import { GreetingCardComponent } from './greeting-card/greeting-card';
 
 export const routes: Routes = [
   {
-    path: 'greeting',
+    path: '',
     component: GreetingCardComponent
   }
 ];
