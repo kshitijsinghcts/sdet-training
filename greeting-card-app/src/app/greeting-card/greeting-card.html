@@ -1,0 +1,17 @@
+<div class="card">
+    <h2>
+        Good {{ timeOfDay }}, {{ firstName | titleCaseFirst }}{{ enthusiastic ? ' 🎉' : '' }}!
+    </h2>
+
+    <label>
+        First Name:
+        <input [(ngModel)]="firstName" placeholder="Enter your name" />
+    </label>
+
+    <label>
+        Time of Day:
+        <input [(ngModel)]="timeOfDay" placeholder="e.g., Morning" />
+    </label>
+
+    <button (click)="toggleEnthusiastic()">Toggle Enthusiastic</button>
+</div>
