@@ -1,3 +1,10 @@
 import { Routes } from '@angular/router';
 
-export const routes: Routes = [];
+import { GreetingCardComponent } from './greeting-card/greeting-card';
+
+export const routes: Routes = [
+  {
+    path: 'greeting',
+    component: GreetingCardComponent
+  }
+];
