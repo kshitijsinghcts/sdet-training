@@ -5,8 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test",
+    "build:ssr": "ng build && ng run greeting-card-app:server",
+    "serve:ssr": "node dist/greeting-card-app/server.mjs",
     "serve:ssr:greeting-card-app": "node dist/greeting-card-app/server/server.mjs"
   },
   "prettier": {
