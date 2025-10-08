@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.By;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.AfterTest;
@@ -35,8 +36,9 @@ public class SeleniumWait {
         WebElement boxElement = new WebDriverWait(driver, Duration.ofSeconds(5))
                 .pollingEvery(Duration.ofMillis(500))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.id("box0")));
-        // get color of box to show
-        System.out.println(boxElement.getCssValue("background-color"));
+        // get color of box to check
+        String boxColor = boxElement.getCssValue("background-color");
+        Assert.assertEquals(boxColor, "rgba(255, 0, 0, 1)", "The box color was not red as expected.");
     }
 
     @AfterTest
