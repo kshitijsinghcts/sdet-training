@@ -5,12 +5,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.Objects;
+import java.util.Optional;
 
 public class Driver {
-    public static void initDriver(String browserType) {
+    public static void initDriver(Optional<String> browserType) {
         if (Objects.isNull(DriverManager.getDriver())) {
             WebDriver driver = null;
-            if (browserType.equalsIgnoreCase("firefox")) {
+            if (browserType.isPresent() && browserType.equalsIgnoreCase("firefox")) {
                 driver = new FirefoxDriver();
             } else {
                 driver = new ChromeDriver();
