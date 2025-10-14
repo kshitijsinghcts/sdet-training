@@ -4,7 +4,11 @@ import org.openqa.selenium.WebDriver;
 
 public class DriverManager {
 
-    public static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
+    private static final ThreadLocal<WebDriver> driver = new ThreadLocal<>();
+
+    private DriverManager() {
+        // Private constructor to prevent instantiation
+    }
     
     public static WebDriver getDriver() {
         return driver.get();
@@ -15,7 +19,10 @@ public class DriverManager {
     }
 
     public static void closeDriver() {
-        driver.get().quit();
-        driver.remove();
+        WebDriver currentDriver = driver.get();
+        if (currentDriver != null) {
+            currentDriver.quit();
+            driver.remove();
+        }
     }
 }

@@ -8,6 +8,8 @@ import java.util.Objects;
 import java.util.Optional;
 
 public class Driver {
+    private Driver() {}
+
     public static void initDriver(Optional<String> browserType) {
         if (Objects.isNull(DriverManager.getDriver())) {
             WebDriver driver = null;
@@ -17,14 +19,12 @@ public class Driver {
                 driver = new ChromeDriver();
             }
             DriverManager.setDriver(driver);
-            DriverManager.getDriver().manage().window().maximize();
         }
     }
 
     public static void quitDriver() {
         if (Objects.nonNull(DriverManager.getDriver())) {
-            DriverManager.getDriver().quit();
-            DriverManager.driver.remove();
+            DriverManager.closeDriver();
         }
     }
 }
