@@ -1,5 +1,5 @@
 # SDET Training Repository
 
-Contains files related to training in Java, Maven, Spring Core, Spring Boot and Angular
+Contains files related to training in Java, Maven, Spring Core, Spring Boot, Angular and Selenium.
 
-Last updated: 10-10-2025
+Last updated: 14-10-2025
