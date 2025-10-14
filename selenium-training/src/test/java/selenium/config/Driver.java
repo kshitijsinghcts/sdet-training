@@ -11,7 +11,7 @@ public class Driver {
     public static void initDriver(Optional<String> browserType) {
         if (Objects.isNull(DriverManager.getDriver())) {
             WebDriver driver = null;
-            if (browserType.isPresent() && browserType.equalsIgnoreCase("firefox")) {
+            if (browserType.isPresent() && browserType.get().equalsIgnoreCase("firefox")) {
                 driver = new FirefoxDriver();
             } else {
                 driver = new ChromeDriver();
