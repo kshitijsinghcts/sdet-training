@@ -2,14 +2,21 @@ package selenium.config;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.Objects;
 
 public class Driver {
-    public static void initDriver() {
+    public static void initDriver(String browserType) {
         if (Objects.isNull(DriverManager.getDriver())) {
-            WebDriver driver = new ChromeDriver();
+            WebDriver driver = null;
+            if (browserType.equalsIgnoreCase("firefox")) {
+                driver = new FirefoxDriver();
+            } else {
+                driver = new ChromeDriver();
+            }
             DriverManager.setDriver(driver);
+            DriverManager.getDriver().manage().window().maximize();
         }
     }
 
